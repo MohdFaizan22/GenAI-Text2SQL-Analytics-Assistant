@@ -44,9 +44,7 @@ def generate_sql(user_question):
 
     return cleaned_query
 
-# =====================================
-# Execute SQL
-# =====================================
+
 
 def execute_sql(sql_query):
 
@@ -73,7 +71,7 @@ if __name__ == "__main__":
 
     question = input("Ask your question: ")
 
-    # Generate SQL
+   
     sql_query = generate_sql(question)
 
     print("\nGenerated SQL:\n")
@@ -81,10 +79,9 @@ if __name__ == "__main__":
 
     print("\nExecuting Query...\n")
 
-    # Execute SQL
+
     result = execute_sql(sql_query)
 
-    # Retry if SQL fails
     if isinstance(result, str) and "SQL ERROR" in result:
 
         print("\nRetrying with error feedback...\n")
